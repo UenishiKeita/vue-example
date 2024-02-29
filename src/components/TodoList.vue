@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { Todo } from '@/App.vue'
+import type { Todo } from '@/pages/AppTop.vue'
 import { computed, ref } from 'vue'
 
 const { todos } = defineProps<{

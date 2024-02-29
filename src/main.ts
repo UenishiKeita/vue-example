@@ -4,6 +4,7 @@ import { createApp } from 'vue'
 import { createPinia } from 'pinia'
 import { Quasar } from 'quasar'
 import quasarLang from 'quasar/lang/ja'
+import router from '@/router'
 
 import 'quasar/src/css/index.sass'
 
@@ -17,5 +18,6 @@ app.use(Quasar, {
 })
 
 app.use(createPinia())
+app.use(router)
 
 app.mount('#app')

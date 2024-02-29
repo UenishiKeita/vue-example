@@ -8,6 +8,7 @@ const { countUp } = counterStore
 </script>
 
 <template>
+  <h2>Count(store)</h2>
   <div>
     <p>Count: {{ count }}</p>
     <p>Double Count: {{ doubleCount }}</p>

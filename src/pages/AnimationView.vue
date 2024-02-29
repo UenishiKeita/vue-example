@@ -22,6 +22,7 @@ onMounted(() => {
 </script>
 
 <template>
+  <h2>Animation</h2>
   <div class="square"></div>
 </template>
 
