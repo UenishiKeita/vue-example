@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import CounterView from './components/CounterView.vue'
+import StoreCounterView from './components/StoreCounterView.vue'
 import TodoInput from './components/TodoInput.vue'
 import TodoList from './components/TodoList.vue'
 import AnimationView from './components/AnimationView.vue'
@@ -34,6 +35,10 @@ function removeTodo(todo: Todo) {
   <div class="container">
     <h1>Count</h1>
     <CounterView :todo-count="todos" />
+  </div>
+  <div class="container">
+    <h1>Count(store)</h1>
+    <StoreCounterView />
   </div>
   <div class="container">
     <h1>TODO</h1>
