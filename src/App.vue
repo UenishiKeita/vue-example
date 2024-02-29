@@ -5,6 +5,7 @@ import TodoInput from './components/TodoInput.vue'
 import TodoList from './components/TodoList.vue'
 import AnimationView from './components/AnimationView.vue'
 import { reactive } from 'vue'
+import AppFooter from './components/layouts/AppFooter.vue'
 
 export type Todo = { id: number; text: string; done: boolean }
 
@@ -28,25 +29,47 @@ function removeTodo(todo: Todo) {
 </script>
 
 <template>
-  <div class="container">
-    <h1>Animation</h1>
-    <AnimationView />
-  </div>
-  <div class="container">
-    <h1>Count</h1>
-    <CounterView :todo-count="todos" />
-  </div>
-  <div class="container">
-    <h1>Count(store)</h1>
-    <StoreCounterView />
-  </div>
-  <div class="container">
-    <h1>TODO</h1>
-    <TodoInput @add-todo="addTodo" />
-    <div class="todos">
-      <TodoList :todos="todos" @remove-todo="removeTodo" />
+  <QLayout view="hHh Lpr fFf">
+    <QHeader class="bg-primary" elevated>
+      <QToolbar>
+        <QToolbarTitle>
+          <QAvatar>
+            <img src="@/assets/logo.svg" alt="ロゴ" />
+          </QAvatar>
+        </QToolbarTitle>
+        <QSpace />
+        <QBtn stretch flat label="About" />
+      </QToolbar>
+    </QHeader>
+
+    <AppFooter />
+    <QFooter elevated>
+      <QToolbar class="glossy text-center">
+        <QToolbarTitle>
+          <small>Copyright (c) 2023 SampleApp. All Rights Reserved.</small>
+        </QToolbarTitle>
+      </QToolbar>
+    </QFooter>
+    <div class="container">
+      <h1>Animation</h1>
+      <AnimationView />
     </div>
-  </div>
+    <div class="container">
+      <h1>Count</h1>
+      <CounterView :todo-count="todos" />
+    </div>
+    <div class="container">
+      <h1>Count(store)</h1>
+      <StoreCounterView />
+    </div>
+    <div class="container">
+      <h1>TODO</h1>
+      <TodoInput @add-todo="addTodo" />
+      <div class="todos">
+        <TodoList :todos="todos" @remove-todo="removeTodo" />
+      </div>
+    </div>
+  </QLayout>
 </template>
 
 <style scoped>
