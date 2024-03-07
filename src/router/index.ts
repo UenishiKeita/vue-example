@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import AppTop from '@/pages/AppTop.vue'
 import StoreCounterView from '@/pages/StoreCounterView.vue'
-import WelcomeItem from '@/components/WelcomeItem.vue'
+import TheWelcome from '@/pages/TheWelcome.vue'
 
 const routes = [
   {
@@ -24,7 +24,12 @@ const routes = [
   {
     path: '/welcome',
     name: 'welcome',
-    component: WelcomeItem
+    component: TheWelcome
+  },
+  {
+    path: '/appsync',
+    name: 'appsync',
+    component: () => import('@/pages/AppSyncDisplay.vue')
   }
 ]
 
